@@ -10,6 +10,10 @@ import {
   REGISTER,
 } from "redux-persist";
 import rootReducer from "./reducers";
+import { authApi } from "./api/auth.api";
+import { twilightApi } from "./api/twilight.api";
+
+const apiMiddleware = [authApi.middleware, twilightApi.middleware];
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -19,7 +23,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(apiMiddleware),
 });
 
 // persist redux store in a web storage
