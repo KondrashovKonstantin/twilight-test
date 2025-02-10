@@ -9,7 +9,10 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - PORT=3000
+      - JWT_SECRET=secret
+      - JWT_EXPIRES_IN=30m
+      - TWILIGHT_URL=https://api3.twilightcyber.com
 
   client-app:
     image: client-app:latest
@@ -20,3 +23,5 @@ services:
       - "3001:3001"
     depends_on:
       - core-api
+    environment:
+      - VITE_API_URL=http://core-api:3000
