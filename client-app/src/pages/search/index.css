@@ -50,6 +50,9 @@
 
 .search-results-table td {
     padding: 12px;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: #16C47F;
 }
 
@@ -90,7 +93,7 @@
     }
 
     .search-results-table-container {
-        max-width: 95vw;
+        max-width: 85vw;
         overflow: auto;
     }
 }

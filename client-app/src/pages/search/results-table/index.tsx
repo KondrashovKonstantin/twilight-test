@@ -95,6 +95,7 @@ const ResultsTable = ({
             onClick={() => {
               onSearch();
             }}
+            disabled={isLoading}
             className="app-submit-btn"
           >
             {t("search.loadMore")}
