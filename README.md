@@ -25,7 +25,7 @@
    ```
 3. Start the application:
    ```sh
-   npm start
+   npm run dev
    ```
 4. The `client-app` will be available at `http://localhost:3001`.
 
